@@ -88,8 +88,8 @@ return array(
      */
     'permission' => function () {
 
-        // App::environment('local')
-        if (App::environment('production')) {
+        // App::environment('production')
+        if (App::environment('local')) {
             if (!Auth::check()) {
                 $user = App\Models\User::first();
                 $user && Auth::login($user);
