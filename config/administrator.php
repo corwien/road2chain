@@ -114,7 +114,7 @@ return array(
      *
      * @type bool
      */
-    'use_dashboard' => true,
+    'use_dashboard' => false,
 
     /*
      * If you want to create a dashboard view, provide the view string here.
