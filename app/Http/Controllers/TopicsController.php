@@ -24,6 +24,7 @@ use App\Activities\UserPublishedNewTopic;
 use App\Activities\BlogHasNewArticle;
 use App\Activities\UserAddedAppend;
 use Carbon\Carbon;
+use Route;
 
 class TopicsController extends Controller implements CreatorListener
 {
@@ -38,12 +39,22 @@ class TopicsController extends Controller implements CreatorListener
         $topics = $topic->getTopicsWithFilter($request->get('filter', 'index'), 40);
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
-        // dd($links );
-        // dd($topics);
-        // dd($banners);
-
         $active_users = ActiveUser::fetchAll();
         $hot_topics = HotTopic::fetchAll();
+
+        //dd($links );
+        // dd($topics);
+        // dd($banners);
+        // dd(count($topics));
+
+        /*
+        foreach($topics as $topic){
+            dd($topic);
+            $ret = $topic->is_excellent;
+            $category = $topic->category->name;
+            dd($category);
+        }
+        */
 
         $new_hot_topics = array();
         foreach($hot_topics as $k => $v)
@@ -51,11 +62,9 @@ class TopicsController extends Controller implements CreatorListener
             if($v)
             {
                 $new_hot_topics[] = $v;
-
             }
-
         }
-        // dd($new_hot_topics);
+
 
         return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'new_hot_topics'));
     }

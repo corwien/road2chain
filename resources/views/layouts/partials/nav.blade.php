@@ -19,7 +19,6 @@
         <li class="{{ (Request::is('topics') && ! Request::is('categories*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
         <li class="{{ (Request::is('categories/'.config('phphub.hunt_category_id')) || (isset($topic) && $topic->category_id == config('phphub.hunt_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.hunt_category_id')) }}">头条</a></li>
         <li class="{{ (Request::is('categories/'.config('phphub.life_category_id')) || (isset($topic) && $topic->category_id == config('phphub.life_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.life_category_id')) }}">生活</a></li>
-        <li class="{{ Request::is('categories/1') || (isset($topic) && $topic->category_id === 1) ? ' active' : '' }}"><a href="{{ route('categories.show', 1) }}">{{ lang('Jobs') }}</a></li>
         <li class="{{ (Request::is('categories/'.config('phphub.qa_category_id')) || (isset($topic) && $topic->category_id == config('phphub.qa_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.qa_category_id')) }}">问答</a></li>
       </ul>
 

@@ -43,6 +43,7 @@ class BaseActivity
             'topic_category_name' => $topic->category->name,
         ], $extra_data);
 
+
         $this->addActivity($causer, $user, $indentifier, $data);
     }
 

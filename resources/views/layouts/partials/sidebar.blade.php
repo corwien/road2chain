@@ -60,14 +60,17 @@
   </div>
   @endif
 
+      <!--
 <div class="panel panel-default corner-radius" style="
     text-align: center;
     background-color: transparent;
     border: none;
 ">
 <a href="https://laravel-china.org/topics/3383" rel="nofollow" title="" style="">
-      <img src="https://dn-phphub.qbox.me/uploads/images/201612/09/1/qASrRyKNj0.jpg" style="width: 100%;border-radius: 0px;box-shadow: none;border: 1px solid #ffafaf;"></a>
+      <img src="https://dn-phphub.qbox.me/uploads/images/201612/09/1/qASrRyKNj0.jpg" style="width: 100%;border-radius: 0px;box-shadow: none;border: 1px solid #ffafaf;">
+</a>
 </div>
+ -->
 
 @if (Route::currentRouteName() == 'topics.index')
     @include('layouts.partials._resources_panel')

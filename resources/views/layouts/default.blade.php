@@ -20,13 +20,13 @@ ______                            _              _                              
 
 		<meta charset="UTF-8">
 
-		<title>@section('title')Laravel China 社区 - 高品质的 Laravel 开发者社区@show - Powered by PHPHub</title>
+		<title>@section('title')Digtime 社区 - 高品质的 区块链学些开发社区@show - Powered by PHPHub</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-		<meta name="keywords" content="php,laravel,php论坛,laravel论坛,php社区,laravel社区,laravel教程,php教程,laravel视频,php开源,php新手,php7,laravel5" />
-		<meta name="author" content="PHPHub" />
-		<meta name="description" content="@section('description') Laravel China 是国内最大的 Laravel 中文开发者社区，致力于推动 Laravel，PHP7、php-fig 等 PHP 新技术，新理念在中国的发展，是国内最靠谱的 PHP 论坛。 @show" />
+		<meta name="keywords" content="blockchain,区块链,以太坊,php,laravel,php论坛,laravel论坛,php7,laravel5" />
+		<meta name="author" content="Digtime" />
+		<meta name="description" content="@section('description') Digtime 是国内最前沿的 区块链 中文开发和学习社区，致力于推动 区块链 以太坊合约 等新技术，新理念在中国的发展，是国内最靠谱的区块链学习论坛。 @show" />
         <meta name="_token" content="{{ csrf_token() }}">
 
         <link rel="stylesheet" href="{{ cdn(elixir('assets/css/styles.css')) }}">
