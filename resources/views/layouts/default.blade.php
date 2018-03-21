@@ -1,37 +1,21 @@
-<!--
-______                            _              _                                     _
-| ___ \                          | |            | |                                   | |
-| |_/ /___ __      __ ___  _ __  | |__   _   _  | |      __ _  _ __  __ _ __   __ ___ | |
-|  __// _ \\ \ /\ / // _ \| '__| | '_ \ | | | | | |     / _` || '__|/ _` |\ \ / // _ \| |
-| |  | (_) |\ V  V /|  __/| |    | |_) || |_| | | |____| (_| || |  | (_| | \ V /|  __/| |
-\_|   \___/  \_/\_/  \___||_|    |_.__/  \__, | \_____/ \__,_||_|   \__,_|  \_/  \___||_|
-                                          __/ |
-                                         |___/
-  ========================================================
-                                           laravel-china.org
-
-  --------------------------------------------------------
-  Powered by PHPHub
--->
-
 <!DOCTYPE html>
 <html lang="zh">
 	<head>
 
 		<meta charset="UTF-8">
 
-		<title>@section('title')Digtime 社区 - 高品质的 区块链学些开发社区@show - Powered by PHPHub</title>
+		<title>@section('title')Road2Chain 社区 - 高品质的 区块链学些开发社区@show - Powered by PHPHub</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 		<meta name="keywords" content="blockchain,区块链,以太坊,php,laravel,php论坛,laravel论坛,php7,laravel5" />
 		<meta name="author" content="Digtime" />
-		<meta name="description" content="@section('description') Digtime 是国内最前沿的 区块链 中文开发和学习社区，致力于推动 区块链 以太坊合约 等新技术，新理念在中国的发展，是国内最靠谱的区块链学习论坛。 @show" />
+		<meta name="description" content="@section('description') Road2Chain 是国内最前沿的 区块链 中文开发和学习社区，致力于推动 区块链 以太坊合约 等新技术，新理念在中国的发展，是国内最靠谱的区块链学习论坛。 @show" />
         <meta name="_token" content="{{ csrf_token() }}">
 
         <link rel="stylesheet" href="{{ cdn(elixir('assets/css/styles.css')) }}">
 
-        <link rel="shortcut icon" href="{{ cdn('favicon1.png') }}"/>
+        <link rel="shortcut icon" href="{{ cdn('roadchain.ico') }}"/>
 
         <script>
             Config = {
