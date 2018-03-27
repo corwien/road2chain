@@ -65,6 +65,10 @@ class EmailHandler
     {
         UserVerification::generate($user);
         $token = $user->verification_token;
+
+        // 打印调试
+        // \Log::info('snd remind Token：' . $token);
+
         Mail::send('emails.fake', [], function (Message $message) use ($user, $token) {
             $message->subject(lang('Please verify your email address'));
 

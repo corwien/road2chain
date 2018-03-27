@@ -23,7 +23,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -186,6 +186,9 @@ return [
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
         App\Providers\OAuthServiceProvider::class,
         App\Providers\ApiExceptionHandlerProvider::class,
+
+        // debugbar
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -247,6 +250,7 @@ return [
 
         // API
         'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

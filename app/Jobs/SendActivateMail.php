@@ -22,6 +22,8 @@ class SendActivateMail extends Job implements SelfHandling, ShouldQueue
 
     public function handle()
     {
+        // 打印调试
+        // \Log::info('sendActivateMail');
         return app('Phphub\Handler\EmailHandler')->sendActivateMail($this->user);
     }
 }

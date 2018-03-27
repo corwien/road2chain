@@ -287,6 +287,7 @@ class UsersController extends Controller
     {
         $user      = Auth::user();
         $cache_key = 'send_activite_mail_' . $user->id;
+
         if (Cache::has($cache_key)) {
             Flash::error(lang('The mail send failed! Please try again in 60 seconds.', ['seconds' => (Cache::get($cache_key) - time())]));
         } else {
@@ -294,6 +295,11 @@ class UsersController extends Controller
                 Flash::error(lang('The mail send failed! Please fill in your email address first.'));
             } else {
                 if (!$user->verified) {
+
+                    // 直接发送
+                    // return app('Phphub\Handler\EmailHandler')->sendActivateMail($user);
+
+                    // 添加到队列发送
                     dispatch(new SendActivateMail($user));
                     Flash::success(lang('The mail sent successfully.'));
                     Cache::put($cache_key, time() + 60, 1);
