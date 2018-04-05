@@ -20,6 +20,7 @@
         <li class="{{ (Request::is('categories/'.config('phphub.hunt_category_id')) || (isset($topic) && $topic->category_id == config('phphub.hunt_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.hunt_category_id')) }}">头条</a></li>
         <li class="{{ (Request::is('categories/'.config('phphub.life_category_id')) || (isset($topic) && $topic->category_id == config('phphub.life_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.life_category_id')) }}">生活</a></li>
         <li class="{{ (Request::is('categories/'.config('phphub.qa_category_id')) || (isset($topic) && $topic->category_id == config('phphub.qa_category_id'))) ? ' active' : '' }}"><a href="{{ route('categories.show', config('phphub.qa_category_id')) }}">问答</a></li>
+        <li class=""><a href="http://blog.digtime.cn" target="_blank">博客</a></li>
       </ul>
 
       <div class="navbar-right">

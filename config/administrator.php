@@ -89,7 +89,8 @@ return array(
     'permission' => function () {
 
         // App::environment('production')
-        if (App::environment('local')) {
+        if(App::environment('local'))
+        {
             if (!Auth::check()) {
                 $user = App\Models\User::first();
                 $user && Auth::login($user);
@@ -97,9 +98,6 @@ return array(
                 return true;
             }
         }
-        /*
-         *
-         */
 
         if (!Auth::check() || !Auth::user()->can('visit_admin') || Auth::user()->roles->count() > 5) {
             return false;
