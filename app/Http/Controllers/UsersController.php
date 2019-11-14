@@ -77,7 +77,7 @@ class UsersController extends Controller
     public function topics($id)
     {
         $user   = User::findOrFail($id);
-        $topics = Topic::whose($user->id)->withoutArticle()->withoutBoardTopics()->recent()->paginate(30);
+        $topics = Topic::whose($user->id)->withoutArticle()->withoutBoardTopics()->recent()->paginate(20);
 
         return view('users.topics', compact('user', 'topics'));
     }
@@ -85,7 +85,7 @@ class UsersController extends Controller
     public function articles($id)
     {
         $user   = User::findOrFail($id);
-        $topics = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->with('blogs')->paginate(30);
+        $topics = Topic::whose($user->id)->onlyArticle()->withoutDraft()->recent()->with('blogs')->paginate(20);
         $user->update(['article_count' => $topics->total()]);
         return view('users.articles', compact('user','blog', 'topics'));
     }
@@ -93,7 +93,7 @@ class UsersController extends Controller
     public function drafts()
     {
         $user   = Auth::user();
-        $topics = $user->topics()->onlyArticle()->draft()->recent()->paginate(30);
+        $topics = $user->topics()->onlyArticle()->draft()->recent()->paginate(20);
         $blog   = $user->blogs()->first();
 
         $user->draft_count = $user->topics()->onlyArticle()->draft()->count();
@@ -105,7 +105,7 @@ class UsersController extends Controller
     public function votes($id)
     {
         $user   = User::findOrFail($id);
-        $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(30);
+        $topics = $user->votedTopics()->orderBy('pivot_created_at', 'desc')->paginate(20);
 
         return view('users.votes', compact('user', 'topics'));
     }
