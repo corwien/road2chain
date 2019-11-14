@@ -1,6 +1,9 @@
 <?php
 # ------------------ Page Route ------------------------
-Route::get('/', 'PagesController@home')->name('home');
+// Route::get('/', 'PagesController@home')->name('home');
+
+// 首页默认显示主题页文章
+Route::get('/', 'TopicsController@index')->name('topics.index');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/search', 'PagesController@search')->name('search');
 Route::get('/feed', 'PagesController@feed')->name('feed');

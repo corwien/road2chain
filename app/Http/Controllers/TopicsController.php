@@ -25,9 +25,13 @@ use App\Activities\BlogHasNewArticle;
 use App\Activities\UserAddedAppend;
 use Carbon\Carbon;
 use Route;
+use Cache;
 
 class TopicsController extends Controller implements CreatorListener
 {
+	
+	// 主体列表使用缓存[20190612]
+    public $topic_list_cache_key = "TOPICS_LIST_V1_PAGE_";
 
     public function __construct()
     {
@@ -36,7 +40,20 @@ class TopicsController extends Controller implements CreatorListener
 
     public function index(Request $request, Topic $topic)
     {
-        $topics = $topic->getTopicsWithFilter($request->get('filter', 'index'), 40);
+		$page = $request->input('page') ? $request->input('page') : 1;
+		$cache_key = $this->topic_list_cache_key . $page;
+        $topics = Cache::get($cache_key);
+
+        // 如果第一条数据集为空，则从表里边获取数据[20190621]
+        if(empty($topics[0]))
+        {
+           // print_r('Cache');
+            $topics = $topic->getTopicsWithFilter($request->get('filter', 'index'), 20);
+
+            // 添加缓存，默认缓存两个小时
+            Cache::add($cache_key, $topics, 3600 * 2);
+        }
+		
         $links  = Link::allFromCache();
         $banners = Banner::allByPosition();
         $active_users = ActiveUser::fetchAll();
@@ -55,6 +72,7 @@ class TopicsController extends Controller implements CreatorListener
             dd($category);
         }
         */
+        
 
         $new_hot_topics = array();
         foreach($hot_topics as $k => $v)
@@ -81,6 +99,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function store(StoreTopicRequest $request)
     {
+		$this->delListCache();  // 清除缓存
         return app('Phphub\Creators\TopicCreator')->create($this, $request->except('_token'));
     }
 
@@ -174,6 +193,8 @@ class TopicsController extends Controller implements CreatorListener
 
         app('Phphub\Notification\Notifier')->newAppendNotify(Auth::user(), $topic, $append);
         app(UserAddedAppend::class)->generate(Auth::user(), $topic, $append);
+		
+		$this->delListCache();  // 清除缓存
 
         return response([
                     'status'  => 200,
@@ -218,6 +239,8 @@ class TopicsController extends Controller implements CreatorListener
         }
 
         $topic->update($data);
+		
+		$this->delListCache();  // 清除缓存
 
         Flash::success(lang('Operation succeeded.'));
 
@@ -292,6 +315,7 @@ class TopicsController extends Controller implements CreatorListener
 
     public function destroy($id)
     {
+		$this->delListCache();  // 清除缓存
         $topic = Topic::findOrFail($id);
         $this->authorize('delete', $topic);
         $topic->delete();
@@ -329,6 +353,21 @@ class TopicsController extends Controller implements CreatorListener
         }
         return $data;
     }
+	
+	// 清除Topic列表缓存
+	public function delListCache()
+	{
+		$ceche_key = $this->topic_list_cache_key;
+		
+		for($i = 1; $i <= 100; $i++)
+		{
+			$new_cache_key = $ceche_key . $i;
+			
+			if(Cache::has($new_cache_key)){
+				Cache::forget($new_cache_key);  // 清除缓存
+			}
+		}
+	}
 
     /**
      * ----------------------------------------
