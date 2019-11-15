@@ -44,12 +44,9 @@ class TopicsController extends Controller implements CreatorListener
 
 		$filter_key = $request->get('filter', 'index');
 		$cache_key = $this->topic_list_cache_key . $page . "_filter_" . $filter_key;
-		echo "cache_key:";
-		print_r($cache_key);
-		die();
 
+		// 从缓存中获取缓存[20191115]
         $topics = Cache::get($cache_key);
-        dd($topics);
 
         // 如果第一条数据集为空，则从表里边获取数据[20190621]
         if(empty($topics[0]))
