@@ -42,10 +42,11 @@ class TopicsController extends Controller implements CreatorListener
     {
 		$page = $request->input('page') ? $request->input('page') : 1;
 
-		print_r($request);
 		$filter_key = $request->get('filter', 'index');
 		$cache_key = $this->topic_list_cache_key . $page . "_filter_" . $filter_key;
+		echo "cache_key:";
 		print_r($cache_key);
+		die();
 
         $topics = Cache::get($cache_key);
         dd($topics);
