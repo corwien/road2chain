@@ -40,7 +40,8 @@
 
         @if ( ! $topics->isEmpty())
 
-            <div class="jscroll">
+            <!-- class="jscroll" -->
+            <div>
                 <div class="panel-body remove-padding-horizontal">
                     @include('topics.partials.topics')
                 </div>
