@@ -31,7 +31,7 @@ class TopicsController extends Controller implements CreatorListener
 {
 	
 	// 主体列表使用缓存[20190612]
-    public $topic_list_cache_key = "TOPICS_LIST_V2_PAGE_";
+    public $topic_list_cache_key = "TOPICS_LIST_V3_PAGE_";
 
     public function __construct()
     {
@@ -54,8 +54,8 @@ class TopicsController extends Controller implements CreatorListener
            // print_r('Cache');
             $topics = $topic->getTopicsWithFilter($request->get('filter', 'index'), 20);
 
-            // 添加缓存，默认缓存两个小时
-            Cache::add($cache_key, $topics, 3600 * 2);
+            // 添加缓存，默认缓存6个小时
+            Cache::add($cache_key, $topics, 3600 * 6);
         }
 		
         $links  = Link::allFromCache();
