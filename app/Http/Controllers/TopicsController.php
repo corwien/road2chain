@@ -31,7 +31,7 @@ class TopicsController extends Controller implements CreatorListener
 {
 	
 	// 主体列表使用缓存[20190612]
-    public $topic_list_cache_key = "TOPICS_LIST_V1_PAGE_";
+    public $topic_list_cache_key = "TOPICS_LIST_V2_PAGE_";
 
     public function __construct()
     {
@@ -41,7 +41,10 @@ class TopicsController extends Controller implements CreatorListener
     public function index(Request $request, Topic $topic)
     {
 		$page = $request->input('page') ? $request->input('page') : 1;
-		$cache_key = $this->topic_list_cache_key . $page;
+
+		$filter_key = $request->get('filter', 'index');
+		$cache_key = $this->topic_list_cache_key . $page . "_filter" . $filter_key;
+		print_r($cache_key);
         $topics = Cache::get($cache_key);
 
         // 如果第一条数据集为空，则从表里边获取数据[20190621]
