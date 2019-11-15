@@ -127,7 +127,7 @@ trait TopicFilterable
 
     public function scopeFresh($query)
     {
-        return $query->whereRaw("(`created_at` > '".Carbon::today()->subMonths(3)->toDateString()."' or (`order` > 0) )");
+        return $query->whereRaw("(`created_at` > '".Carbon::today()->subMonths(15)->toDateString()."' or (`order` > 0) )");
     }
 
     public function scopeRecentReply($query)
