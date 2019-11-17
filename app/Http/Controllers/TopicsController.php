@@ -362,14 +362,19 @@ class TopicsController extends Controller implements CreatorListener
 	public function delListCache()
 	{
 		$ceche_key = $this->topic_list_cache_key;
+		$filter_key_arr = array('index','default','excellent','recent', 'vote');
 		
 		for($i = 1; $i <= 100; $i++)
 		{
-			$new_cache_key = $ceche_key . $i;
-			
-			if(Cache::has($new_cache_key)){
-				Cache::forget($new_cache_key);  // 清除缓存
-			}
+		    foreach($filter_key_arr as $filter_key)
+		    {
+                $new_cache_key = $ceche_key . $i . "_filter_" . $filter_key;
+                if(Cache::has($new_cache_key)){
+                    Cache::forget($new_cache_key);  // 清除缓存
+                }
+
+            }
+
 		}
 	}
 
