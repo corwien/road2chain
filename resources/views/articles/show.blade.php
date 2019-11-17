@@ -147,6 +147,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-A
 <!--mathjax-->
 <script src="/js/mathjax/libs/mathJax.js"></script>
 <!--mathjax source code is here: https://github.com/mathjax/MathJax.-->
+
 <script src="/js/mathjax/MathJax.js?config=TeX-AMS-MML_SVG"></script>
 
 <!--blacker: 1 below means font weight.-->
