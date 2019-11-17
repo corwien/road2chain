@@ -145,11 +145,13 @@ https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-A
 -->
 
 <script>
+    /*
     MathJax = {
         tex: {
             inlineMath: [['$', '$'], ['\\(', '\\)']]
         }
     };
+    */
 </script>
 <script type="text/javascript" async
 
