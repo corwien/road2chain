@@ -149,8 +149,8 @@ https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-A
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]], processEscapes: true }, TeX: { equationNumbers: { autoNumber: "AMS" } }, messageStyle: "none", SVG: { blacker: 1 }});
 </script>
-<script src="./assets/js/mathjax/mathJax.js"></script>
+<script src="../../assets/js/mathjax/mathJax.js"></script>
 <!--mathjax source code is here: https://github.com/mathjax/MathJax.-->
-<script src="./assets/js/mathjax/MathJax_v2.js?config=TeX-AMS-MML_SVG"></script>
+<script src="../../assets/js/mathjax/MathJax_v2.js?config=TeX-AMS-MML_SVG"></script>
 
 @stop
