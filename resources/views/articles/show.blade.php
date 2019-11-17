@@ -149,9 +149,8 @@
 <script type="text/x-mathjax-config">
         MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]], processEscapes: true }, TeX: { equationNumbers: { autoNumber: "AMS" } }, messageStyle: "none", SVG: { blacker: 1 }});
 </script>
-<script src="https://www.zybuluo.com/static/editor/libs/mathJax.js"></script>
 <!--mathjax source code is here: https://github.com/mathjax/MathJax.-->
-<script src="https://www.zybuluo.com/static/MathJax/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+<script src="/js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
 @stop
