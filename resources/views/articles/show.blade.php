@@ -144,26 +144,13 @@ https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
 -->
 
-<script>
-    /*
-    MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
-    };
-    */
-</script>
-<script type="text/javascript" async
-
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  //see https://www.cnblogs.com/bobofuns/p/6829920.html
-  // 数学LaTex 语法解析[20190120]
-</script>
-
+<!--mathjax-->
+<!--blacker: 1 below means font weight.-->
 <script type="text/x-mathjax-config">
- MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]], processEscapes: true }, TeX: { equationNumbers: { autoNumber: "AMS" } }, messageStyle: "none", SVG: { blacker: 1 }});
 </script>
+<script src="./assets/js/mathjax/mathJax.js"></script>
+<!--mathjax source code is here: https://github.com/mathjax/MathJax.-->
+<script src="./assets/js/mathjax/MathJax_v2.js?config=TeX-AMS-MML_SVG"></script>
 
 @stop
