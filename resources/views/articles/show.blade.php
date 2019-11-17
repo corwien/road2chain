@@ -139,20 +139,19 @@
 
 </script>
 
-<!--
-https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
--->
+<srcipt type="text/javascript">
+    // https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    // https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
+</srcipt>
 
 <!--mathjax-->
-<script src="/js/mathjax/libs/mathJax.js"></script>
-<!--mathjax source code is here: https://github.com/mathjax/MathJax.-->
-
-<script src="/js/mathjax/MathJax.js?config=TeX-AMS-MML_SVG"></script>
-
 <!--blacker: 1 below means font weight.-->
 <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]], processEscapes: true }, TeX: { equationNumbers: { autoNumber: "AMS" } }, messageStyle: "none", SVG: { blacker: 1 }});
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]], processEscapes: true }, TeX: { equationNumbers: { autoNumber: "AMS" } }, messageStyle: "none", SVG: { blacker: 1 }});
 </script>
+<script src="https://www.zybuluo.com/static/editor/libs/mathJax.js"></script>
+<!--mathjax source code is here: https://github.com/mathjax/MathJax.-->
+<script src="https://www.zybuluo.com/static/MathJax/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+
 
 @stop
