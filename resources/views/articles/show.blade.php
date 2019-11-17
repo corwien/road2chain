@@ -154,12 +154,14 @@ https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-A
 <script type="text/javascript" async
 
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-
+  //see https://www.cnblogs.com/bobofuns/p/6829920.html
   // 数学LaTex 语法解析[20190120]
 </script>
 
-
-
-
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
 
 @stop
