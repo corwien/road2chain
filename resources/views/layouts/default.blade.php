@@ -17,6 +17,9 @@
 
         <link rel="shortcut icon" href="{{ cdn('roadchain.ico') }}"/>
 
+        <!-- google adsense -->
+        <script data-ad-client="ca-pub-1931887165710574" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
         <script>
             Config = {
                 'cdnDomain': '{{ get_cdn_domain() }}',
