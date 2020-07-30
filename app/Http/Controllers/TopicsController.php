@@ -31,7 +31,7 @@ class TopicsController extends Controller implements CreatorListener
 {
 	
 	// 主体列表使用缓存[20190612]
-    public $topic_list_cache_key = "TOPICS_LIST_V3_PAGE_";
+    public $topic_list_cache_key = "TOPICS_LIST_V4_PAGE_";
 
     public function __construct()
     {
