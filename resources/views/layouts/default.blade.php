@@ -4,18 +4,37 @@
 
 		<meta charset="UTF-8">
 
-		<title>@section('title')Road2Chain 社区 - 高品质的 区块链学些开发社区@show - Powered by PHPHub</title>
+		<title>@section('title')Digtime社区 - 高品质的AI学习开发社区@show - Powered by PHPHub</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-		<meta name="keywords" content="blockchain,区块链,以太坊,php,laravel,php论坛,laravel论坛,php7,laravel5" />
+		<meta name="keywords" content="digtime.cn,AI,机器学习,深度学习,Corwien,AI for Trading,AI量化投资,Quant,Go,Golang,Pytorch,php7,laravel5" />
 		<meta name="author" content="Digtime" />
-		<meta name="description" content="@section('description') Road2Chain 是国内最前沿的 区块链 中文开发和学习社区，致力于推动 区块链 以太坊合约 等新技术，新理念在中国的发展，是国内最靠谱的区块链学习论坛。 @show" />
+		<meta name="description" content="@section('description') Digtime 是国内最前沿的AI中文开发和学习社区，致力于推动机器学习、深度学习、NLP 等新技术，新理念在中国的发展，是国内最靠谱的AI学习论坛。 @show" />
         <meta name="_token" content="{{ csrf_token() }}">
 
         <link rel="stylesheet" href="{{ cdn(elixir('assets/css/styles.css')) }}">
 
         <link rel="shortcut icon" href="{{ cdn('roadchain.ico') }}"/>
+		
+	   <!-- qq stats -->
+	   <!--
+       <script type="text/javascript" src="http://tajs.qq.com/stats?sId=46344439" charset="UTF-8"></script>
+	   -->
+       <!-- Scripts -->
+
+		<!-- baidu stats -->
+		<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?412e0ca7eb2052a626b36eafea47fe0e";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+		<!-- baidu stats -->
+
 
         <!-- google adsense -->
         <script data-ad-client="ca-pub-1931887165710574" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

@@ -20,9 +20,13 @@ class PagesController extends Controller
         if (Auth::check()) {
             return app(ActivityController::class)->index($request);
         } else {
-            $topics = $topic->getTopicsWithFilter('excellent');
-            $banners = Banner::allByPosition();
-            return view('pages.home', compact('topics', 'banners'));
+			// die("test");
+            // $topics = $topic->getTopicsWithFilter('excellent');
+            // $banners = Banner::allByPosition();
+            // return view('pages.home', compact('topics', 'banners'));
+			// return view('topics.index',compact('topics', 'banners'));
+			header('Location: ./topics');
+			die();
         }
     }
 

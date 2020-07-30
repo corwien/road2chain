@@ -15,14 +15,18 @@ use Flash;
 use Phphub\Markdown\Markdown;
 
 use App\Http\Requests\StoreTopicRequest;
+use Cache;
 
 class ArticlesController extends Controller implements CreatorListener
 {
+	// 主体列表使用缓存[20190612]
+    public $topic_list_cache_key = "TOPICS_LIST_V1_PAGE_";
+	
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
-
+	
 	public function create(Request $request)
 	{
         $user = Auth::user();
@@ -34,6 +38,8 @@ class ArticlesController extends Controller implements CreatorListener
 
         $blog = $request->blog_id ? Blog::findOrFail($request->blog_id) : Auth::user()->blogs()->first();
         $this->authorize('create-article', $blog);
+		
+		$this->delListCache();  // 清除缓存
 
 		return view('articles.create_edit', compact('topic', 'user', 'blog'));
 	}
@@ -49,6 +55,9 @@ class ArticlesController extends Controller implements CreatorListener
         if ($request->subject == 'draft') {
             $data['is_draft'] = 'yes';
         }
+		
+		$this->delListCache();  // 清除缓存
+		
         return app('Phphub\Creators\TopicCreator')->create($this, $data, $blog);
 	}
 
@@ -74,6 +83,8 @@ class ArticlesController extends Controller implements CreatorListener
         if ( ! $blog->authors()->where('user_id', $topic->user_id)->exists()) {
             $blog->authors()->attach($topic->user_id);
         }
+		
+		$this->delListCache();  // 清除缓存
 
         Flash::success(lang('Operation succeeded.'));
         return redirect()->to($topic->link());
@@ -94,6 +105,22 @@ class ArticlesController extends Controller implements CreatorListener
 	{
         // See: TopicsController->update
 	}
+	
+	// 清除Topic列表缓存
+	public function delListCache()
+	{
+		$ceche_key = $this->topic_list_cache_key;
+		
+		for($i = 1; $i <= 100; $i++)
+		{
+			$new_cache_key = $ceche_key . $i;
+			
+			if(Cache::has($new_cache_key)){
+				Cache::forget($new_cache_key);  // 清除缓存
+			}
+		}
+	}
+	
 
     /**
      * ----------------------------------------

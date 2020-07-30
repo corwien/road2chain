@@ -139,10 +139,13 @@
 
 </script>
 
-<script type="text/javascript" async
+<!--mathjax source code is here: https://github.com/mathjax/MathJax.-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+<!--mathjax-->
+<!--blacker: 1 below means font weight.-->
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]], processEscapes: true }, TeX: { equationNumbers: { autoNumber: "AMS" } }, messageStyle: "none", SVG: { blacker: 1 }});
+</script>    
 
-  // 数学LaTex 语法解析[20190120]
-</script>
 @stop
