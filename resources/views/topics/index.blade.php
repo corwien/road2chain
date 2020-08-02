@@ -52,6 +52,7 @@
                 <div class="pull-right add-padding-vertically">
                     <!-- Pager -->
                     <!-- 这里不使用pjax 获取 appends(Request::except('page', '_pjax')) -->
+                  <!-- TEST -->
                     {{ $topics->render() }}
                 </div>
             </div>
