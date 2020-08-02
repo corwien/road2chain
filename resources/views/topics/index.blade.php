@@ -53,7 +53,7 @@
                     <!-- Pager -->
                     <!-- 这里不使用pjax 获取 appends(Request::except('page', '_pjax')) -->
                   <!-- TEST -->
-                    {{ $topics->render() }}
+                    $topics->render()
                 </div>
             </div>
 
