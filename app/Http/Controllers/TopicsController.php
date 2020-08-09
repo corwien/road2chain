@@ -31,7 +31,7 @@ class TopicsController extends Controller implements CreatorListener
 {
 	
 	// 主体列表使用缓存[20190612]
-    public $topic_list_cache_key = "TOPICS_LIST_V5_PAGE_";
+    public $topic_list_cache_key = "TOPICS_LIST_V6_PAGE_";
 
     public function __construct()
     {
@@ -88,7 +88,7 @@ class TopicsController extends Controller implements CreatorListener
         }
 
         // 分页打印测试【20200809】
-        dd($topics->render());
+        // dd($topics->render());
         return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'new_hot_topics'));
     }
 
