@@ -87,7 +87,8 @@ class TopicsController extends Controller implements CreatorListener
             }
         }
 
-        // dd($topics->render());
+        // 分页打印测试【20200809】
+        dd($topics->render());
         return view('topics.index', compact('topics', 'links', 'banners', 'active_users', 'new_hot_topics'));
     }
 
