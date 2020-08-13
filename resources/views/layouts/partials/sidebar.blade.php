@@ -1,14 +1,23 @@
 <div class="col-md-3 side-bar">
 
+  <div class="panel panel-default corner-radius">
+    <div class="panel-body text-center sidebar-sponsor-box">
+      @if(isset($banners['sidebar-sponsor']))
+        @foreach($banners['sidebar-sponsor'] as $banner)
+          <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
+            <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
+          </a>
+          <hr>
+        @endforeach
+      @endif
+    </div>
+  </div>
+
   <div class="panel panel-default corner-radius" style="color:#a5a5a5">
     <div class="panel-body text-center">
-      <span>×İÏò¹ã¸æÎª²âÊÔ</span>
-          <span style="margin-top: 7px;display: inline-block;">
-              <i class="fa fa-heart" aria-hidden="true" style="color: rgba(232, 146, 136, 0.89);"></i> ½¨Òé·´À¡£¿ÇëË½ĞÅ Summer
-          </span>
-
+      <!-- <span>çºµå‘å¹¿å‘Šä¸ºæµ‹è¯•</span>-->
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- ×İÏò¹ã¸æ -->
+      <!-- çºµå‘å¹¿å‘Š -->
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-1931887165710574"
