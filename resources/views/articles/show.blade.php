@@ -53,6 +53,18 @@
                         <br>
                         <br>
                         @include('topics.partials.topic_operate', ['is_article' => true, 'manage_topics' => $currentUser ? ($currentUser->can("manage_topics") && $currentUser->roles->count() <= 5) : false])
+
+                    <!-- google ads fluid -->
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-format="fluid"
+                         data-ad-layout-key="-fe-2g+3h+1d+1e"
+                         data-ad-client="ca-pub-1931887165710574"
+                         data-ad-slot="8223399016"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                   </div>
 
               </div>
@@ -96,7 +108,6 @@
                 </div>
             </div>
 
-
             @if (count($userTopics))
 
             <div class="recommended-wrap">
@@ -112,6 +123,19 @@
 
             @endif
 
+          <div class="panel panel-default corner-radius">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- 纵向广告 google ads-->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1931887165710574"
+                 data-ad-slot="5611470128"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
         </div>
 
 </div>
