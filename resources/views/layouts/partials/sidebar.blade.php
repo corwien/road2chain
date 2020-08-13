@@ -1,17 +1,8 @@
 <div class="col-md-3 side-bar">
 
-  <div class="panel panel-default corner-radius">
-    <div class="panel-body text-center sidebar-sponsor-box">
-      @if(isset($banners['sidebar-sponsor']))
-        @foreach($banners['sidebar-sponsor'] as $banner)
-          <a class="sidebar-sponsor-link" href="{{ $banner->link }}" target="_blank">
-            <img src="{{ $banner->image_url }}" class="popover-with-html" data-content="{{ $banner->title }}" width="100%">
-          </a>
-          <hr>
-        @endforeach
-      @endif
-    </div>
-  </div>
+  @if (Route::currentRouteName() == 'topics.index')
+    @include('layouts.partials._resources_panel')
+  @endif
 
   <div class="panel panel-default corner-radius" style="color:#a5a5a5">
     <div class="panel-body text-center">
