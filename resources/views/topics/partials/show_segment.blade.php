@@ -1,6 +1,5 @@
 
   <div class="votes-container panel panel-default padding-md">
-
     <div class="panel-body vote-box text-center">
 
         <div class="btn-group">
