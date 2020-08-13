@@ -42,6 +42,19 @@
       <div data-lang-excellent="{{ lang('This topic has been mark as Excenllent Topic.') }}" data-lang-wiki="{{ lang('This is a Community Wiki.') }}" class="ribbon-container">
         @include('topics.partials.ribbon')
       </div>
+
+      <!-- google ads fluid -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="fluid"
+           data-ad-layout-key="-fe-2g+3h+1d+1e"
+           data-ad-client="ca-pub-1931887165710574"
+           data-ad-slot="8223399016"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
     </div>
     <div class="appends-container" data-lang-append="{{ lang('Append') }}">
       @foreach ($topic->appends as $index => $append)
@@ -82,22 +95,6 @@
     @endif
     @include('topics.partials.topic_operate', ['manage_topics' => $currentUser ? ($currentUser->can("manage_topics") && $currentUser->roles->count() <= 5) : false])
   </div>
-
-  <div class="topic panel panel-default">
-    <!-- Google ADS <span></span> -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- 横向广告 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-1931887165710574"
-         data-ad-slot="7945973518"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
 
   @include('topics.partials.show_segment')
 
